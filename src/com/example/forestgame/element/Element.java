@@ -1,28 +1,22 @@
 package com.example.forestgame.element;
 
 public class Element {
+
+    private String name;
+
+    public Element(String name) {
 	
-	private int type;
-	private String texture;
+	this.name = name;
+    }
 	
-	public Element(int type, String texture) {
-		super();
-		this.type = type;
-		this.texture = texture;
-	}
+    public String getName() {
 	
+	return this.name;
+    }
 	
-	public int getType() {
-		return this.type;
-	}
+    // Conversion several elements into one of higher level.
+    public void changeToNextLvl() {
 	
-	public String getTexture() {
-		return this.texture;
-	}
-	
-	// Conversion several elements into one of higher level.
-	public void changeToNextLvl() {
-		TableOfElements.getNextLvl(type);
-	}
-	
+	TableOfElements.getNextLvl(name);	
+    }	
 }
